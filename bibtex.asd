@@ -19,11 +19,11 @@
   :description "Compatible re-implementation of the BibTeX program, with a BST-to-CL compiler."
   :author "Matthias Koeppe <mkoeppe@math.ucdavis.edu>"
   :licence "LGPL 2.1+"
-  :depends-on (#-(or cmu abcl sbcl clisp ecl) :port
+  :depends-on (; #-(or cmu abcl sbcl clisp ecl) :port ; SVS only for kpathsea, which we don't need
 		 :split-sequence)
   :components ((:file "cmp")
 	       (:file "packages" :depends-on ("cmp"))
-	       (:file "kpathsea" :depends-on ("packages"))
+	       ;(:file "kpathsea" :depends-on ("packages"))
 	       (:file "bibtex-runtime" :depends-on ("packages"))
 	       (:file "lisp-form-builder" :depends-on ("packages"))
 	       (:file "bst-functions" :depends-on ("packages" "lisp-form-builder"
